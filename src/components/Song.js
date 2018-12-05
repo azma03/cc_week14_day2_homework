@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import './Song.css';
 
 class Song extends Component{
   constructor(props){
@@ -21,14 +22,25 @@ class Song extends Component{
 
   render(){
     return (
-      <div className="song">
-        <img src={this.props.song["im:image"][2].label} alt={this.getTitle()} />
-        <p>{`Chart Position: ${this.props.chartPosition}`}</p>
-        <p>{`Title: ${this.getTitle()}`}</p>
-        <p>{`Artist: ${this.getArtist()}`}</p>
-      </div>
+      <tr className="song">
+        <td>{this.props.chartPosition}</td>
+        <td><img src={this.props.song["im:image"][0].label} alt={this.getTitle()} /></td>
+        <td>{this.getTitle()}</td>
+        <td>{this.getArtist()}</td>
+      </tr>
     )
   }
 }
 
 export default Song;
+
+// render(){
+//   return (
+//     <div className="song">
+//       <img src={this.props.song["im:image"][0].label} alt={this.getTitle()} />
+//       <p>{`Chart Position: ${this.props.chartPosition}`}</p>
+//       <p>{`Title: ${this.getTitle()}`}</p>
+//       <p>{`Artist: ${this.getArtist()}`}</p>
+//     </div>
+//   )
+// }
